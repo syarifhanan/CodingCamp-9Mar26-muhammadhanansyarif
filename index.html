@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Life Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            <button id="user-settings" class="user-settings" aria-label="User settings">⚙️</button>
+        </header>
+
+        <main class="dashboard-main">
+            <!-- Greeting Component -->
+            <section class="greeting-component">
+                <div class="time-display">
+                    <span id="current-time">12:00:00 PM</span>
+                    <span id="current-date">Monday, January 15</span>
+                </div>
+                <h1 id="greeting-message">Good Morning!</h1>
+            </section>
+
+            <!-- Task Manager -->
+            <section class="task-manager">
+                <h2>Tasks</h2>
+                <div class="task-input">
+                    <input type="text" id="task-input" placeholder="Add a new task..." aria-label="New task">
+                    <button id="add-task-btn" aria-label="Add task">Add</button>
+                </div>
+                <select id="sort-select" aria-label="Sort tasks">
+                    <option value="creation">Sort by Creation</option>
+                    <option value="completion">Sort by Completion</option>
+                    <option value="alphabetical">Sort Alphabetically</option>
+                </select>
+                <ul id="task-list" class="task-list" aria-label="Task list"></ul>
+            </section>
+
+            <!-- Focus Timer -->
+            <section class="focus-timer">
+                <h2>Focus Timer</h2>
+                <div class="timer-display">
+                    <span id="timer-time">25:00</span>
+                </div>
+                <div class="timer-controls">
+                    <button id="timer-start" aria-label="Start timer">Start</button>
+                    <button id="timer-stop" aria-label="Stop timer">Stop</button>
+                    <button id="timer-reset" aria-label="Reset timer">Reset</button>
+                </div>
+                <div class="timer-settings">
+                    <label for="timer-duration">Duration (minutes):</label>
+                    <input type="number" id="timer-duration" value="25" min="1" max="120" aria-label="Timer duration in minutes">
+                </div>
+            </section>
+
+            <!-- Quick Links Manager -->
+            <section class="quick-links-manager">
+                <h2>Quick Links</h2>
+                <div class="quick-link-input">
+                    <input type="url" id="link-url" placeholder="https://example.com" aria-label="Link URL">
+                    <input type="text" id="link-label" placeholder="Label" aria-label="Link label">
+                    <button id="add-link-btn" aria-label="Add quick link">Add</button>
+                </div>
+                <ul id="quick-link-list" class="quick-link-list" aria-label="Quick links"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
