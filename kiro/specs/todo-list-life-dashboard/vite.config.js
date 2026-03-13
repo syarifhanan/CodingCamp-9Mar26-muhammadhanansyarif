@@ -1,0 +1,11 @@
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+
+export default defineConfig({
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./test/setup.js'],
+    include: ['./test/**/*.test.ts']
+  }
+});
