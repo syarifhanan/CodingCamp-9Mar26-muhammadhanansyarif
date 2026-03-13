@@ -703,6 +703,20 @@ class Dashboard {
       });
     });
 
+    taskList.querySelectorAll('.task-edit').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const id = e.target.closest('.task-item').dataset.id;
+        const task = this.taskManager.tasks.find(t => t.id === id);
+        if (task) {
+          const newText = prompt('Edit task:', task.text);
+          if (newText !== null && newText.trim()) {
+            this.taskManager.editTask(id, newText.trim());
+            this.renderTasks();
+          }
+        }
+      });
+    });
+
     taskList.querySelectorAll('.task-delete').forEach(button => {
       button.addEventListener('click', (e) => {
         const id = e.target.closest('.task-item').dataset.id;
